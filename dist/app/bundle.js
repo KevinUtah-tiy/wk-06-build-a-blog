@@ -21972,7 +21972,7 @@
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
-	var _Footer = __webpack_require__(/*! ./Footer */ 175);
+	var _Footer = __webpack_require__(/*! ./Footer */ 176);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
@@ -22082,6 +22082,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _blogData = __webpack_require__(/*! ./blog-data.json */ 175);
+	
+	var _blogData2 = _interopRequireDefault(_blogData);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22102,6 +22106,8 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log("blogData: ", _blogData2.default[0].title);
+	      console.log("blogData: ", _blogData2.default.length);
 	      return _react2.default.createElement(
 	        'section',
 	        null,
@@ -22109,6 +22115,26 @@
 	          'h2',
 	          null,
 	          'Main section'
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          '(blogData[0].title)'
+	        ),
+	        _react2.default.createElement(
+	          'h4',
+	          null,
+	          'blogData[0].article'
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          '(blogData[1].title)'
+	        ),
+	        _react2.default.createElement(
+	          'h4',
+	          null,
+	          'blogData[1].article'
 	        )
 	      );
 	    }
@@ -22121,6 +22147,27 @@
 
 /***/ },
 /* 175 */
+/*!*******************************************!*\
+  !*** ./src/app/components/blog-data.json ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	[{
+	      "title": "A title",
+	      "posted": "2016-10-30Z08:30",
+	      "article": "This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. ",
+	      "tags": ["pizza", "cheese"]
+	}, {
+	      "title": "Another title",
+	      "posted": "2016-10-30Z09:30",
+	      "article": "This is another blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. ",
+	      "tags": ["puppies", "kittens"]
+	}];
+
+/***/ },
+/* 176 */
 /*!**************************************!*\
   !*** ./src/app/components/Footer.js ***!
   \**************************************/
