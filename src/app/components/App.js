@@ -1,9 +1,18 @@
-fetch('./app/test.json')
-// make the request for the json file
-.then(function(response) {
-    // Convert to JSON
-    return response.json();
-}).then(function(obj) {
-    // Yay, `j` is a JavaScript object
-    console.log(obj);
-});
+"use strict";
+
+import React from 'react';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer'
+
+export default class App extends React.Component {
+  render () {
+    return (
+      <div className='container'>
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    );
+  }
+}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
@@ -25,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/KevinUtah-tiy/wk-06-build-a-blog.git"
   },
-  "author": "Kevin Black",
+  "author": "Kevin Black <Kevin_Jay_Black@hotmail.com> (https://github.com/KevinUtah-tiy)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KevinUtah-tiy/wk-06-build-a-blog/issues"
