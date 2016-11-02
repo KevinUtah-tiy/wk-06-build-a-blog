@@ -22075,7 +22075,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'ul',
-	            null,
+	            { className: 'navbar' },
 	            _react2.default.createElement(
 	              'li',
 	              null,
@@ -22148,7 +22148,7 @@
 	
 	
 	// module
-	exports.push([module.id, "h1 {\n  background-color: lemonchiffon;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  padding-left: 10px;\n  border: groove; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: flex-end; }\n\nli {\n  display: inline-flex;\n  padding-left: 5px;\n  padding-right: 5px; }\n", ""]);
+	exports.push([module.id, "h1 {\n  background-color: lemonchiffon;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  padding-left: 10px;\n  border: groove; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: flex-end; }\n\nli {\n  display: inline-flex;\n  padding-left: 5px;\n  padding-right: 5px; }\n\n.navbar {\n  background-color: red; }\n", ""]);
 	
 	// exports
 
@@ -22600,7 +22600,7 @@
 	          { className: "column" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "col-md-4" },
+	            { className: "col-md-12" },
 	            _react2.default.createElement(
 	              "h4",
 	              null,
@@ -22615,11 +22615,16 @@
 	              "p",
 	              null,
 	              "Article:  Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur."
+	            ),
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "tag:"
 	            )
 	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "col-md-4" },
+	            { className: "col-md-12" },
 	            _react2.default.createElement(
 	              "h4",
 	              null,
@@ -22638,7 +22643,7 @@
 	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "col-md-4" },
+	            { className: "col-md-12" },
 	            _react2.default.createElement(
 	              "h4",
 	              null,
@@ -22729,7 +22734,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".col-md-4 {\n  background-color: skyblue;\n  display: flex;\n  min-height: 40rem;\n  flex-direction: column;\n  justify-content: flex-start;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  border: 5px groove; }\n\n.column {\n  border-right: 5px; }\n\nh4 {\n  font-weight: bold; }\n\nh5 {\n  font-weight: bold; }\n", ""]);
+	exports.push([module.id, "* {\n  margin: 0;\n  padding: 0; }\n\n.col-md-12 {\n  background-color: skyblue;\n  display: flex;\n  min-height: 20rem;\n  flex-direction: column;\n  justify-content: center;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  border: 5px groove; }\n\n.column {\n  border-right: 5px; }\n\nh4 {\n  font-weight: bold; }\n\nh5 {\n  font-weight: bold; }\n", ""]);
 	
 	// exports
 

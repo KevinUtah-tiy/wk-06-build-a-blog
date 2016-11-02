@@ -10,12 +10,13 @@ export default class Header extends React.Component {
         <div className="row">
           <h1>Build A Blog</h1>
 
-          <ul>
-         <li>Home</li>
-         <li>News</li>
-         <li>Contact</li>
-         <li>About</li>
+          <ul className="navbar">
+             <li>Home</li>
+             <li>News</li>
+             <li>Contact</li>
+             <li>About</li>
           </ul>
+
         </div>
      </div>
     );

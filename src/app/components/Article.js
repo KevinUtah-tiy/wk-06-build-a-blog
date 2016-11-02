@@ -14,6 +14,7 @@ export default class Article extends React.Component {
           <h4>Title:  Thoughts on Cats' Ipsum</h4>
           <h5>Posted:  Date</h5>
           <p>Article:  Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur.</p>
+          <p>tag:</p>
         </div>
 
         <div className="col-md-12">
