@@ -4,8 +4,6 @@
   "description": "Build A React App Blog for our week 06 assignment",
   "main": "index.js",
   "dependencies": {
-  },
-  "devDependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "babel-core": "^6.18.0",
@@ -20,6 +18,8 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
   },
   "scripts": {
     "start": "node server.js",

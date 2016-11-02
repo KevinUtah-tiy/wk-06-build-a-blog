@@ -22,23 +22,19 @@ var config = {
           presets: ["react", "es2015"]
         }
       },
-
       {
         test: /\.json?/,
         include: SRC_DIR,
         loader: "json-loader"
       },
-
       {
         test: /\.css$/,
         loader: "style!css"
       },
-
       {
         test: /\.sass$/,
         loaders: ["style", "css", "sass"]
       },
-
       {
         test: /\.(jpe?g|png|gif|svg)(\?v=\d+\.\d+\.\d+)?$/i,
         loader: 'file-loader?name=[path][name].[ext]?[hash:10]',
