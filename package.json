@@ -23,8 +23,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack -d && cp src/index.html dist/index.html && cp -R app/components/images dist/app && webpack-dev-server --content-base src/ --inline --hot",
-    "postinstall": "webpack -p && cp src/index.html dist/index.html && cp -R app/components/images dist/app"
+    "dev": "webpack -d && cp src/index.html dist/index.html && cp -R src/app/components/images dist/app && webpack-dev-server --content-base src/ --inline --hot",
+    "postinstall": "webpack -p && cp src/index.html dist/index.html && cp -R src/app/components/images dist/app"
   },
   "repository": {
     "type": "git",
