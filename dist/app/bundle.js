@@ -22082,9 +22082,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _blogData = __webpack_require__(/*! ./blog-data.json */ 175);
+	var _Article = __webpack_require__(/*! ./Article */ 175);
 	
-	var _blogData2 = _interopRequireDefault(_blogData);
+	var _Article2 = _interopRequireDefault(_Article);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22106,36 +22106,10 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
-	      console.log("blogData: ", _blogData2.default[0].title);
-	      console.log("blogData: ", _blogData2.default.length);
 	      return _react2.default.createElement(
 	        'section',
 	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Main section'
-	        ),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          '(blogData[0].title)'
-	        ),
-	        _react2.default.createElement(
-	          'h4',
-	          null,
-	          'blogData[0].article'
-	        ),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          '(blogData[1].title)'
-	        ),
-	        _react2.default.createElement(
-	          'h4',
-	          null,
-	          'blogData[1].article'
-	        )
+	        _react2.default.createElement(_Article2.default, null)
 	      );
 	    }
 	  }]);
@@ -22143,28 +22117,166 @@
 	  return Main;
 	}(_react2.default.Component);
 	
+	/*
+	// <h2>Main section</h2>
+	//   <div className="col-md-4">
+	//   <h4>title:  Thoughts on Cupcake Ipsum</h4>
+	//   <h5>Posted:  2016-10-30Z09:30</h5>
+	//     <p>Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur.</p>
+	//     <br />
+	//
+	//     <h4>title:  Thoughts on Cats' Ipsum</h4>: "",
+	//     <h5>posted </h5>: "2016-10-30Z08:30",
+	//     <p>Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur.</p>
+	//       <br />
+	//
+	//    <h4>"title"</h4> : "Thoughts on Swine Ipsum",
+	//    <h5>"posted"</h5> : "2016-10-30Z09:30",
+	//    <h6>  "article"</h6> : "Bacon ipsum dolor amet hamburger kielbasa meatloaf, beef sirloin tail tri-tip ham hock short loin swine pork belly ham burgdoggen pig. Picanha pork turkey turducken shankle strip steak ham hock. Pancetta doner shoulder fatback. Jerky filet mignon cow, jowl pastrami sausage alcatra meatball. Jerky tenderloin cow short loin alcatra corned beef drumstick tail salami andouille pork loin. Beef filet mignon brisket tenderloin. Short loin prosciutto shank tri-tip burgdoggen beef ribs.
+	    </div>
+	    */
+	
+	
 	exports.default = Main;
 
 /***/ },
 /* 175 */
-/*!*******************************************!*\
-  !*** ./src/app/components/blog-data.json ***!
-  \*******************************************/
-/***/ function(module, exports) {
+/*!***************************************!*\
+  !*** ./src/app/components/Article.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
-	[{
-	      "title": "A title",
-	      "posted": "2016-10-30Z08:30",
-	      "article": "This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. ",
-	      "tags": ["pizza", "cheese"]
-	}, {
-	      "title": "Another title",
-	      "posted": "2016-10-30Z09:30",
-	      "article": "This is another blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. This is a blog entry.. ",
-	      "tags": ["puppies", "kittens"]
-	}];
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Article = function (_React$Component) {
+	  _inherits(Article, _React$Component);
+	
+	  function Article() {
+	    _classCallCheck(this, Article);
+	
+	    return _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).apply(this, arguments));
+	  }
+	
+	  _createClass(Article, [{
+	    key: "render",
+	    value: function render() {
+	      // const { title } = this.props;
+	
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-md-4" },
+	          _react2.default.createElement(
+	            "h4",
+	            null,
+	            "Title:  Thoughts on Cats' Ipsum"
+	          ),
+	          _react2.default.createElement(
+	            "h5",
+	            null,
+	            "Posted:  Date"
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Article:  Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur."
+	          ),
+	          "// ",
+	          _react2.default.createElement(
+	            "a",
+	            { className: "btn btn-default", href: "#" },
+	            "More Info"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-md-4" },
+	          _react2.default.createElement(
+	            "h4",
+	            null,
+	            "Title: Thoughts on Swine Ipsum"
+	          ),
+	          _react2.default.createElement(
+	            "h5",
+	            null,
+	            "Posted:  "
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Article:  Bacon ipsum dolor amet hamburger kielbasa meatloaf, beef sirloin tail tri-tip ham hock short loin swine pork belly ham burgdoggen pig. Picanha pork turkey turducken shankle strip steak ham hock. Pancetta doner shoulder fatback. Jerky filet mignon cow, jowl pastrami sausage alcatra meatball. Jerky tenderloin cow short loin alcatra corned beef drumstick tail salami andouille pork loin. Beef filet mignon brisket tenderloin. Short loin prosciutto shank tri-tip burgdoggen beef ribs."
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-md-4" },
+	          _react2.default.createElement(
+	            "h4",
+	            null,
+	            "Title:  Thoughts on Cupcake Ipsum"
+	          ),
+	          _react2.default.createElement(
+	            "h5",
+	            null,
+	            "Posted:  "
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Article:  Cupcake ipsum dolor sit amet tiramisu icing cheesecake cake. Jujubes bonbon powder cupcake caramels apple pie chocolate bar. Macaroon sweet cotton candy sugar plum. Oat cake jelly cupcake drag\xE9e. Muffin pastry dessert cookie chupa chups. Lemon drops cheesecake sugar plum."
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Article;
+	}(_react2.default.Component);
+	
+	// [{
+	//         "title" : "Thoughts on Cats' Ipsum",
+	//         "posted" : "2016-10-30Z08:30",
+	//         "article" : "Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur.",
+	//         "tags" : ["cats", "kittens", "ipsum"]
+	//   },
+	//
+	//   {
+	//         "title" : "Thoughts on Swine Ipsum",
+	//         "posted" : "2016-10-30Z09:30",
+	//         "article" : "Bacon ipsum dolor amet hamburger kielbasa meatloaf, beef sirloin tail tri-tip ham hock short loin swine pork belly ham burgdoggen pig. Picanha pork turkey turducken shankle strip steak ham hock. Pancetta doner shoulder fatback. Jerky filet mignon cow, jowl pastrami sausage alcatra meatball. Jerky tenderloin cow short loin alcatra corned beef drumstick tail salami andouille pork loin. Beef filet mignon brisket tenderloin. Short loin prosciutto shank tri-tip burgdoggen beef ribs.",
+	//         "tags" : ["bacon", "pork", "carnivore"]
+	//   },
+	//
+	//   {
+	//         "title" : "Thoughts on Cupcake Ipsum",
+	//         "posted" : "2016-10-30Z09:30",
+	//         "article" : "Cupcake ipsum dolor sit amet tiramisu icing cheesecake cake. Jujubes bonbon powder cupcake caramels apple pie chocolate bar. Macaroon sweet cotton candy sugar plum. Oat cake jelly cupcake dragée. Muffin pastry dessert cookie chupa chups. Lemon drops cheesecake sugar plum.",
+	//         "tags" : ["", "", ""]
+	//   }
+	// ]
+	
+	
+	exports.default = Article;
 
 /***/ },
 /* 176 */

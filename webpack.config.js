@@ -21,7 +21,30 @@ var config = {
         query: {
           presets: ["react", "es2015"]
         }
+      },
+
+      {
+        test: /\.json?/,
+        include: SRC_DIR,
+        loader: "json-loader"
+      },
+
+      {
+        test: /\.css$/,
+        loader: "style!css"
+      },
+
+      {
+        test: /\.sass$/,
+        loaders: ["style", "css", "sass"]
       }
+/*
+      {
+       test: /\.json?/,
+       include: SRC_DIR,
+       loader: "json-loader"
+      }
+*/
     ]
   }
 };
