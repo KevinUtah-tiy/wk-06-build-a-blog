@@ -37,14 +37,13 @@ var config = {
       {
         test: /\.sass$/,
         loaders: ["style", "css", "sass"]
-      }
-/*
+      },
+
       {
-       test: /\.json?/,
-       include: SRC_DIR,
-       loader: "json-loader"
+        test: /\.(jpe?g|png|gif|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+        loader: 'file-loader?name=[path][name].[ext]?[hash:10]',
+        exclude: /(node_modules|bower_components)/
       }
-*/
     ]
   }
 };
