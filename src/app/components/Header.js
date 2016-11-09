@@ -12,10 +12,10 @@ export default class Header extends React.Component {
           <h1 className="col-sm-6">Build A Blog</h1>
 
           <ul className="navbar col-sm-6">
-             <li>Home</li>
-             <li>News</li>
-             <li>Contact</li>
-             <li>About</li>
+             <li><a href="#">Home</a></li>
+             <li><a href="#">News</a></li>
+             <li><a href="#">Contact</a></li>
+             <li><a href="#">About</a></li>
           </ul>
 
         </div>

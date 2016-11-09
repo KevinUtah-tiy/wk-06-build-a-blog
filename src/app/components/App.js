@@ -26,7 +26,7 @@ export default class App extends React.Component {
           <Sidebar data={this.state.data} />
           <Main data = {this.state.data} />
           </div>
-        <Main />
+        
         <Footer />
       </div>
     );

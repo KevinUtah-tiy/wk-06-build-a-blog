@@ -21964,25 +21964,29 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _app = __webpack_require__(/*! ./app.sass */ 173);
-	
-	var _app2 = _interopRequireDefault(_app);
-	
-	var _Header = __webpack_require__(/*! ./Header */ 177);
+	var _Header = __webpack_require__(/*! ./Header */ 173);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Main = __webpack_require__(/*! ./Main */ 180);
+	var _Main = __webpack_require__(/*! ./Main */ 178);
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
-	var _Sidebar = __webpack_require__(/*! ./Sidebar */ 186);
+	var _Footer = __webpack_require__(/*! ./Footer */ 187);
+	
+	var _Footer2 = _interopRequireDefault(_Footer);
+	
+	var _Sidebar = __webpack_require__(/*! ./Sidebar */ 182);
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
-	var _Footer = __webpack_require__(/*! ./Footer */ 189);
+	var _app = __webpack_require__(/*! ./app.sass */ 190);
 	
-	var _Footer2 = _interopRequireDefault(_Footer);
+	var _app2 = _interopRequireDefault(_app);
+	
+	var _blogposts = __webpack_require__(/*! ./blogposts.json */ 192);
+	
+	var _blogposts2 = _interopRequireDefault(_blogposts);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21995,10 +21999,15 @@
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 	
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	
+	    _this.state = {
+	      data: _blogposts2.default
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(App, [{
@@ -22008,6 +22017,12 @@
 	        'div',
 	        { className: 'container-fluid' },
 	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'content' },
+	          _react2.default.createElement(_Sidebar2.default, { data: this.state.data }),
+	          _react2.default.createElement(_Main2.default, { data: this.state.data })
+	        ),
 	        _react2.default.createElement(_Main2.default, null),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -22021,25 +22036,117 @@
 
 /***/ },
 /* 173 */
-/*!*************************************!*\
-  !*** ./src/app/components/app.sass ***!
-  \*************************************/
+/*!**************************************!*\
+  !*** ./src/app/components/Header.js ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _header = __webpack_require__(/*! ./header.sass */ 174);
+	
+	var _header2 = _interopRequireDefault(_header);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+	
+	  function Header() {
+	    _classCallCheck(this, Header);
+	
+	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+	  }
+	
+	  _createClass(Header, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'header' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'h1',
+	            { className: 'col-sm-6' },
+	            'Build A Blog'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'navbar col-sm-6' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                'Home'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              'News'
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              'Contact'
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              'About'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Header;
+	}(_react2.default.Component);
+	
+	exports.default = Header;
+
+/***/ },
+/* 174 */
+/*!****************************************!*\
+  !*** ./src/app/components/header.sass ***!
+  \****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 174);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./header.sass */ 175);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./app.sass", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./app.sass");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header.sass", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header.sass");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -22049,24 +22156,24 @@
 	}
 
 /***/ },
-/* 174 */
-/*!********************************************************************!*\
-  !*** ./~/css-loader!./~/sass-loader!./src/app/components/app.sass ***!
-  \********************************************************************/
+/* 175 */
+/*!***********************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/app/components/header.sass ***!
+  \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".container-fluid {\n  background-color: darkslategrey;\n  width: 100vw;\n  height: 100vh;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n", ""]);
+	exports.push([module.id, ".header {\n  width: 100%;\n  height: 15%; }\n\n.row {\n  background-color: lemonchiffon;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  padding-left: 10px;\n  border: groove; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: flex-end; }\n\nli {\n  display: inline-flex;\n  padding-left: 5px;\n  padding-right: 5px; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 175 */
+/* 176 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -22125,7 +22232,7 @@
 
 
 /***/ },
-/* 176 */
+/* 177 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -22380,141 +22487,7 @@
 
 
 /***/ },
-/* 177 */
-/*!**************************************!*\
-  !*** ./src/app/components/Header.js ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _header = __webpack_require__(/*! ./header.sass */ 178);
-	
-	var _header2 = _interopRequireDefault(_header);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Header = function (_React$Component) {
-	  _inherits(Header, _React$Component);
-	
-	  function Header() {
-	    _classCallCheck(this, Header);
-	
-	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-	  }
-	
-	  _createClass(Header, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'header' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'stuff row' },
-	          _react2.default.createElement(
-	            'h1',
-	            { className: 'col-sm-6' },
-	            'Build A Blog'
-	          ),
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'navbar col-sm-6' },
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              'Home'
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              'News'
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              'Contact'
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              'About'
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return Header;
-	}(_react2.default.Component);
-	
-	exports.default = Header;
-
-/***/ },
 /* 178 */
-/*!****************************************!*\
-  !*** ./src/app/components/header.sass ***!
-  \****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./header.sass */ 179);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header.sass", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header.sass");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 179 */
-/*!***********************************************************************!*\
-  !*** ./~/css-loader!./~/sass-loader!./src/app/components/header.sass ***!
-  \***********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".stuff {\n  background-color: lemonchiffon;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  padding-left: 10px;\n  border: groove; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: flex-end; }\n\nli {\n  display: inline-flex;\n  padding-left: 5px;\n  padding-right: 5px; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 180 */
 /*!************************************!*\
   !*** ./src/app/components/Main.js ***!
   \************************************/
@@ -22532,17 +22505,17 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Article = __webpack_require__(/*! ./Article */ 181);
+	var _Article = __webpack_require__(/*! ./Article */ 179);
 	
 	var _Article2 = _interopRequireDefault(_Article);
 	
-	var _main = __webpack_require__(/*! ./main.sass */ 184);
-	
-	var _main2 = _interopRequireDefault(_main);
-	
-	var _Sidebar = __webpack_require__(/*! ./Sidebar */ 186);
+	var _Sidebar = __webpack_require__(/*! ./Sidebar */ 182);
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	var _main = __webpack_require__(/*! ./main.sass */ 185);
+	
+	var _main2 = _interopRequireDefault(_main);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -22567,7 +22540,50 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mainDiv' },
-	        _react2.default.createElement(_Article2.default, null),
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Main section'
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          this.props.data[0].title
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.props.data[0].date,
+	          ' ',
+	          _react2.default.createElement('br', null)
+	        ),
+	        _react2.default.createElement(_Article2.default, { data: this.props.data[0].article }),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          this.props.data[1].title
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.props.data[1].date,
+	          '  ',
+	          _react2.default.createElement('br', null)
+	        ),
+	        _react2.default.createElement(_Article2.default, { data: this.props.data[1].article }),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          this.props.data[2].title
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.props.data[2].date,
+	          ' ',
+	          _react2.default.createElement('br', null)
+	        ),
+	        _react2.default.createElement(_Article2.default, { data: this.props.data[2].article }),
 	        _react2.default.createElement(_Sidebar2.default, null)
 	      );
 	    }
@@ -22579,7 +22595,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 181 */
+/* 179 */
 /*!***************************************!*\
   !*** ./src/app/components/Article.js ***!
   \***************************************/
@@ -22597,7 +22613,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _article = __webpack_require__(/*! ./article.sass */ 182);
+	var _article = __webpack_require__(/*! ./article.sass */ 180);
 	
 	var _article2 = _interopRequireDefault(_article);
 	
@@ -22621,72 +22637,18 @@
 	  _createClass(Article, [{
 	    key: "render",
 	    value: function render() {
-	      // const { title } = this.props;
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "article col-sm-9" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "articleTest col-md-12" },
-	          _react2.default.createElement(
-	            "h4",
-	            null,
-	            "Title:  Thoughts on Cats' Ipsum"
-	          ),
-	          _react2.default.createElement(
-	            "h5",
-	            null,
-	            "Posted:  Date"
-	          ),
-	          _react2.default.createElement(
+	        this.props.data.map(function (paragraph, idx) {
+	          return _react2.default.createElement(
 	            "p",
-	            null,
-	            "Article:  Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur."
-	          ),
-	          _react2.default.createElement(
-	            "p",
-	            null,
-	            "tag:"
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "articleTest col-md-12" },
-	          _react2.default.createElement(
-	            "h4",
-	            null,
-	            "Title: Thoughts on Swine Ipsum"
-	          ),
-	          _react2.default.createElement(
-	            "h5",
-	            null,
-	            "Posted:  "
-	          ),
-	          _react2.default.createElement(
-	            "p",
-	            null,
-	            "Article:  Bacon ipsum dolor amet hamburger kielbasa meatloaf, beef sirloin tail tri-tip ham hock short loin swine pork belly ham burgdoggen pig. Picanha pork turkey turducken shankle strip steak ham hock. Pancetta doner shoulder fatback. Jerky filet mignon cow, jowl pastrami sausage alcatra meatball. Jerky tenderloin cow short loin alcatra corned beef drumstick tail salami andouille pork loin. Beef filet mignon brisket tenderloin. Short loin prosciutto shank tri-tip burgdoggen beef ribs."
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "articleTest col-md-12" },
-	          _react2.default.createElement(
-	            "h4",
-	            null,
-	            "Title:  Thoughts on Cupcake Ipsum"
-	          ),
-	          _react2.default.createElement(
-	            "h5",
-	            null,
-	            "Posted:  "
-	          ),
-	          _react2.default.createElement(
-	            "p",
-	            null,
-	            "Article:  Cupcake ipsum dolor sit amet tiramisu icing cheesecake cake. Jujubes bonbon powder cupcake caramels apple pie chocolate bar. Macaroon sweet cotton candy sugar plum. Oat cake jelly cupcake drag\xE9e. Muffin pastry dessert cookie chupa chups. Lemon drops cheesecake sugar plum."
-	          )
-	        )
+	            { key: idx },
+	            paragraph,
+	            _react2.default.createElement("br", null),
+	            _react2.default.createElement("br", null)
+	          );
+	        })
 	      );
 	    }
 	  }]);
@@ -22694,33 +22656,10 @@
 	  return Article;
 	}(_react2.default.Component);
 	
-	// [{
-	//         "title" : "Thoughts on Cats' Ipsum",
-	//         "posted" : "2016-10-30Z08:30",
-	//         "article" : "Tempora est modi adipisci. Adipisicing. Illo. Pariatur illo but consequat eu yet sed ut but magnam. Aliqua nemo quisquam cupidatat and vel culpa. Numquam inventore ipsa. Duis quia for quisquam laboriosam elit so ab velit. Pariatur. Ex in yet perspiciatis. Vel aliquid. Iure ullam or cillum and exercitationem but iure. Exercitation. Consequatur accusantium irure ea. Dolorem vel, aliquam or dolores veritatis. Ipsam nesciunt pariatur, deserunt yet nequeporro or commodo. Dicta ut, irure. Ipsa minima but velit duis but autem id aliquid. Tempora consectetur.",
-	//         "tags" : ["cats", "kittens", "ipsum"]
-	//   },
-	//
-	//   {
-	//         "title" : "Thoughts on Swine Ipsum",
-	//         "posted" : "2016-10-30Z09:30",
-	//         "article" : "Bacon ipsum dolor amet hamburger kielbasa meatloaf, beef sirloin tail tri-tip ham hock short loin swine pork belly ham burgdoggen pig. Picanha pork turkey turducken shankle strip steak ham hock. Pancetta doner shoulder fatback. Jerky filet mignon cow, jowl pastrami sausage alcatra meatball. Jerky tenderloin cow short loin alcatra corned beef drumstick tail salami andouille pork loin. Beef filet mignon brisket tenderloin. Short loin prosciutto shank tri-tip burgdoggen beef ribs.",
-	//         "tags" : ["bacon", "pork", "carnivore"]
-	//   },
-	//
-	//   {
-	//         "title" : "Thoughts on Cupcake Ipsum",
-	//         "posted" : "2016-10-30Z09:30",
-	//         "article" : "Cupcake ipsum dolor sit amet tiramisu icing cheesecake cake. Jujubes bonbon powder cupcake caramels apple pie chocolate bar. Macaroon sweet cotton candy sugar plum. Oat cake jelly cupcake dragée. Muffin pastry dessert cookie chupa chups. Lemon drops cheesecake sugar plum.",
-	//         "tags" : ["", "", ""]
-	//   }
-	// ]
-	
-	
 	exports.default = Article;
 
 /***/ },
-/* 182 */
+/* 180 */
 /*!*****************************************!*\
   !*** ./src/app/components/article.sass ***!
   \*****************************************/
@@ -22729,10 +22668,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./article.sass */ 183);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./article.sass */ 181);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22749,70 +22688,24 @@
 	}
 
 /***/ },
-/* 183 */
+/* 181 */
 /*!************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/article.sass ***!
   \************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "* {\n  margin: 0;\n  padding: 0; }\n\n.articleTest {\n  background-color: skyblue;\n  display: flex;\n  min-height: 20rem;\n  flex-direction: column;\n  justify-content: center;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  border: 5px groove; }\n\n.column {\n  border-right: 5px; }\n\nh4 {\n  font-weight: bold; }\n\nh5 {\n  font-weight: bold; }\n", ""]);
+	exports.push([module.id, "* {\n  margin: 0;\n  padding: 0; }\n\n.articleTest {\n  background-color: skyblue;\n  max-height: 50rem;\n  flex-direction: column;\n  justify-content: center;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  border: 5px groove; }\n\n.column {\n  border-right: 5px; }\n\nh4 {\n  font-weight: bold; }\n\nh5 {\n  font-weight: bold; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 184 */
-/*!**************************************!*\
-  !*** ./src/app/components/main.sass ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./main.sass */ 185);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.sass", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.sass");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 185 */
-/*!*********************************************************************!*\
-  !*** ./~/css-loader!./~/sass-loader!./src/app/components/main.sass ***!
-  \*********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".mainDiv {\n  font-size: 1.5rem;\n  font-style: italic;\n  border-style: groove;\n  margin-bottom: 5px;\n  border-bottom: 5px;\n  background-color: white;\n  height: 100%; }\n\n.header {\n  width: 300px;\n  height: 50px; }\n\n.mainDiv {\n  width: 100%;\n  height: 250px;\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 500; }\n\n.footer {\n  width: 300px;\n  height: 50px; }\n", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 186 */
+/* 182 */
 /*!***************************************!*\
   !*** ./src/app/components/Sidebar.js ***!
   \***************************************/
@@ -22830,7 +22723,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _sidebar = __webpack_require__(/*! ./sidebar.sass */ 187);
+	var _sidebar = __webpack_require__(/*! ./sidebar.sass */ 183);
 	
 	var _sidebar2 = _interopRequireDefault(_sidebar);
 	
@@ -22855,12 +22748,12 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'aside',
+	        'div',
 	        { className: 'sidebar col-sm-3' },
 	        _react2.default.createElement(
-	          'p',
+	          'h2',
 	          null,
-	          'Marshall is my dog!'
+	          'Sidebar'
 	        )
 	      );
 	    }
@@ -22869,10 +22762,13 @@
 	  return Sidebar;
 	}(_react2.default.Component);
 	
+	// Goes inside 'Sidebar' div
+	
+	
 	exports.default = Sidebar;
 
 /***/ },
-/* 187 */
+/* 183 */
 /*!*****************************************!*\
   !*** ./src/app/components/sidebar.sass ***!
   \*****************************************/
@@ -22881,10 +22777,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./sidebar.sass */ 188);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./sidebar.sass */ 184);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22901,24 +22797,70 @@
 	}
 
 /***/ },
-/* 188 */
+/* 184 */
 /*!************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/sidebar.sass ***!
   \************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".sidebar {\n  border: 5px groove; }\n", ""]);
+	exports.push([module.id, ".sidebar {\n  border: 5px groove;\n  background-color: skyblue;\n  height: 100vh; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 189 */
+/* 185 */
+/*!**************************************!*\
+  !*** ./src/app/components/main.sass ***!
+  \**************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./main.sass */ 186);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.sass", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./main.sass");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 186 */
+/*!*********************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/app/components/main.sass ***!
+  \*********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".mainDiv {\n  font-size: 1.5rem;\n  font-style: italic;\n  border-style: groove;\n  margin-bottom: 5px;\n  border-bottom: 5px;\n  background-color: white;\n  height: 100%;\n  width: 100%;\n  flex-grow: 1;\n  flex-shrink: 0; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 187 */
 /*!**************************************!*\
   !*** ./src/app/components/Footer.js ***!
   \**************************************/
@@ -22936,7 +22878,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _footer = __webpack_require__(/*! ./footer.sass */ 190);
+	var _footer = __webpack_require__(/*! ./footer.sass */ 188);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
@@ -22961,22 +22903,26 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'footer',
-	        { className: 'footer' },
+	        'div',
+	        null,
 	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Kevin J Black'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'The Iron Yard'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Footer'
+	          'footer',
+	          { className: 'footer' },
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Kevin J Black'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'The Iron Yard'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Footer'
+	          )
 	        )
 	      );
 	    }
@@ -22988,7 +22934,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 190 */
+/* 188 */
 /*!****************************************!*\
   !*** ./src/app/components/footer.sass ***!
   \****************************************/
@@ -22997,10 +22943,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./footer.sass */ 191);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./footer.sass */ 189);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23017,21 +22963,96 @@
 	}
 
 /***/ },
-/* 191 */
+/* 189 */
 /*!***********************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/footer.sass ***!
   \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "footer {\n  background-color: yellow;\n  margin-top: 5px;\n  border: 5px groove;\n  padding-left: 5px;\n  padding-top: 5px;\n  text-align: center;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  height: 200px; }\n", ""]);
+	exports.push([module.id, ".footer {\n  background-color: yellow;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border: 5px groove;\n  padding-left: 5px;\n  padding-top: 5px;\n  margin-bottom: 5px;\n  text-align: center;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  width: 100%;\n  height: 15%; }\n", ""]);
 	
 	// exports
 
+
+/***/ },
+/* 190 */
+/*!*************************************!*\
+  !*** ./src/app/components/app.sass ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 191);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./app.sass", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./app.sass");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 191 */
+/*!********************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/app/components/app.sass ***!
+  \********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".container-fluid {\n  background-color: darkslategrey;\n  width: 100vw;\n  height: 100vh;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 192 */
+/*!*******************************************!*\
+  !*** ./src/app/components/blogposts.json ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	module.exports = [{
+		"id": "1",
+		"title": "Thoughts on Cats' Ipsum",
+		"date": "October 31, 2016 20:00",
+		"article": ["Sit by the fire chirp at birds yet chase mice.", "Put toy mouse in food bowl run out of litter box at full speed.", "Sleep nap fall asleep on the washing machine or claws in your leg yet sit on the laptop."],
+		"tags": ["birds", "mice", "sleep"]
+	}, {
+		"id": "2",
+		"title": "Thoughts on Swine Ipsum",
+		"date": "November 1, 2016 12:00",
+		"article": ["Bacon ipsum dolor amet hamburger kielbasa meatloaf, beef sirloin tail tri-tip ham hock short loin swine pork belly ham burgdoggen pig.", "Picanha pork turkey turducken shankle strip steak ham hock.", "Short loin prosciutto shank tri-tip burgdoggen beef ribs."],
+		"tags": ["burgdoggen", "turducken", "tri-tip"]
+	}, {
+		"id": "3",
+		"title": "Thoughts on Cupcake Ipsum",
+		"date": "November 2, 2016 16:00",
+		"article": ["Cupcake ipsum dolor sit amet tiramisu icing cheesecake cake.", "Jujubes bonbon powder cupcake caramels apple pie chocolate bar.", "Muffin pastry dessert cookie chupa chups."],
+		"tags": ["tiramisu", "bonbon", "pastry"]
+	}];
 
 /***/ }
 /******/ ]);
