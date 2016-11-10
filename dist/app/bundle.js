@@ -22023,7 +22023,6 @@
 	          _react2.default.createElement(_Sidebar2.default, { data: this.state.data }),
 	          _react2.default.createElement(_Main2.default, { data: this.state.data })
 	        ),
-	        _react2.default.createElement(_Main2.default, null),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
@@ -22103,17 +22102,29 @@
 	            _react2.default.createElement(
 	              'li',
 	              null,
-	              'News'
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                'News'
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'li',
 	              null,
-	              'Contact'
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                'Contact'
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'li',
 	              null,
-	              'About'
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                'About'
+	              )
 	            )
 	          )
 	        )
@@ -22537,6 +22548,7 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log("data:", this.props.data);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mainDiv' },
@@ -22546,45 +22558,56 @@
 	          'Main section'
 	        ),
 	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          this.props.data[0].title
+	          'div',
+	          { className: 'postDiv' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            this.props.data[0].title
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            this.props.data[0].date,
+	            ' ',
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(_Article2.default, { data: this.props.data[0].article })
 	        ),
 	        _react2.default.createElement(
-	          'p',
-	          null,
-	          this.props.data[0].date,
-	          ' ',
-	          _react2.default.createElement('br', null)
-	        ),
-	        _react2.default.createElement(_Article2.default, { data: this.props.data[0].article }),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          this.props.data[1].title
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          this.props.data[1].date,
-	          '  ',
-	          _react2.default.createElement('br', null)
-	        ),
-	        _react2.default.createElement(_Article2.default, { data: this.props.data[1].article }),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          this.props.data[2].title
+	          'div',
+	          { className: 'postDiv' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            this.props.data[1].title
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            this.props.data[1].date,
+	            '  ',
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(_Article2.default, { data: this.props.data[1].article })
 	        ),
 	        _react2.default.createElement(
-	          'p',
-	          null,
-	          this.props.data[2].date,
-	          ' ',
-	          _react2.default.createElement('br', null)
-	        ),
-	        _react2.default.createElement(_Article2.default, { data: this.props.data[2].article }),
-	        _react2.default.createElement(_Sidebar2.default, null)
+	          'div',
+	          { className: 'postDiv' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            this.props.data[2].title
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            this.props.data[2].date,
+	            ' ',
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(_Article2.default, { data: this.props.data[2].article })
+	        )
 	      );
 	    }
 	  }]);
@@ -22754,16 +22777,58 @@
 	          'h2',
 	          null,
 	          'Sidebar'
-	        )
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Month'
+	        ),
+	        _react2.default.createElement(
+	          'ul',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'August'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'September'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'October'
+	          )
+	        ),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'ul',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'November'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'December'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'January'
+	          )
+	        ),
+	        _react2.default.createElement('hr', null)
 	      );
 	    }
 	  }]);
 	
 	  return Sidebar;
 	}(_react2.default.Component);
-	
-	// Goes inside 'Sidebar' div
-	
 	
 	exports.default = Sidebar;
 

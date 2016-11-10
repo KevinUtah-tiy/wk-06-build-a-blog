@@ -13,30 +13,16 @@ export default class Main extends React.Component {
     return(
       <div className="mainDiv">
         <h2>Main section</h2>
-        <h3>
-          {this.props.data[0].title}
-        </h3>
-        <p>
-          {this.props.data[0].date} <br />
-      </p>
-      <Article data={this.props.data[0].article} />
 
-        <h3>
-          {this.props.data[1].title}
-        </h3>
-        <p>
-          {this.props.data[1].date}  <br />
-      </p>
-      <Article data={this.props.data[1].article} />
-
-        <h3>
-          {this.props.data[2].title}
-        </h3>
-        <p>
-          {this.props.data[2].date} <br />
-      </p>
-      <Article data={this.props.data[2].article} />
-
+        {this.props.data.map(function(c,i,a) {
+          return(
+             <div key={i} className="postDiv">
+               <h3>{a[i].title}</h3>
+               <p>{a[i].date}<br /></p>
+               <Article data={a[i].article} />
+             </div>
+           )
+        })}
 
       </div>
 

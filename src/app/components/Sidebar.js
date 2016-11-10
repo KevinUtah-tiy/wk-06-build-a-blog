@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import MonthList from './MonthList';
+
 import sidebar from './sidebar.sass';
 
 export default class Sidebar extends React.Component {
@@ -10,6 +12,7 @@ export default class Sidebar extends React.Component {
         <div className='sidebar col-sm-3'>
           <h2>Sidebar</h2>
           <h3>Month</h3>
+          <MonthList data={this.props.data}/>
           <ul>
             <li>August</li>
             <li>September</li>
@@ -21,6 +24,8 @@ export default class Sidebar extends React.Component {
             <li>December</li>
             <li>January</li>
           </ul>
+          <hr />
+
 
         </div>
       );

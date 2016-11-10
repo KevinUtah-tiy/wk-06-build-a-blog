@@ -31,5 +31,17 @@
       "Muffin pastry dessert cookie chupa chups."
     ],
     "tags": ["tiramisu", "bonbon", "pastry"]
+  },
+
+  {
+    "id": "4",
+    "title": "Thoughts on Veggie Ipsum",
+    "date": "November 9, 2016 16:00",
+    "article": [
+      "This cute ipsum generator injects names of vegetables in its output.",
+      "Did I already say this is cute?.",
+      "Because it is. Cute, that is."
+    ],
+    "tags": ["injects", "cute", "generator"]
   }
 ]

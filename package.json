@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "prod:start": "npm run postinstall && npm run copy && npm start",
     "dev": "webpack -d && cp src/index.html dist/index.html && cp -R src/app/images dist/app && webpack-dev-server --content-base src/ --inline --hot",
     "postinstall": "webpack -p && cp src/index.html dist/index.html && cp -R src/app/images dist/app"
   },
