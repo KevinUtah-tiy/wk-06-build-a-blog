@@ -21972,7 +21972,7 @@
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
-	var _Footer = __webpack_require__(/*! ./Footer */ 187);
+	var _Footer = __webpack_require__(/*! ./Footer */ 189);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
@@ -21980,11 +21980,11 @@
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
-	var _app = __webpack_require__(/*! ./app.sass */ 190);
+	var _app = __webpack_require__(/*! ./app.sass */ 192);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _blogposts = __webpack_require__(/*! ./blogposts.json */ 192);
+	var _blogposts = __webpack_require__(/*! ./blogposts.json */ 194);
 	
 	var _blogposts2 = _interopRequireDefault(_blogposts);
 	
@@ -22178,7 +22178,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\n  width: 100%;\n  height: 15%; }\n\n.row {\n  background-color: lemonchiffon;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  padding-left: 10px;\n  border: groove; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: flex-end; }\n\nli {\n  display: inline-flex;\n  padding-left: 5px;\n  padding-right: 5px; }\n", ""]);
+	exports.push([module.id, ".header {\n  width: 100%;\n  height: 15%; }\n\n.row {\n  background-color: lemonchiffon;\n  border-radius: 25px 0px 25px 0px;\n  -moz-border-radius: 25px 0px 25px 0px;\n  -webkit-border-radius: 25px 0px 25px 0px;\n  padding-left: 10px;\n  border: groove; }\n\n.ul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n  display: flex;\n  justify-content: flex-end; }\n\nli {\n  display: inline-flex;\n  padding-left: 5px;\n  padding-right: 5px; }\n", ""]);
 	
 	// exports
 
@@ -22524,7 +22524,7 @@
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
-	var _main = __webpack_require__(/*! ./main.sass */ 185);
+	var _main = __webpack_require__(/*! ./main.sass */ 187);
 	
 	var _main2 = _interopRequireDefault(_main);
 	
@@ -22557,57 +22557,24 @@
 	          null,
 	          'Main section'
 	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'postDiv' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            this.props.data[0].title
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            this.props.data[0].date,
-	            ' ',
-	            _react2.default.createElement('br', null)
-	          ),
-	          _react2.default.createElement(_Article2.default, { data: this.props.data[0].article })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'postDiv' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            this.props.data[1].title
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            this.props.data[1].date,
-	            '  ',
-	            _react2.default.createElement('br', null)
-	          ),
-	          _react2.default.createElement(_Article2.default, { data: this.props.data[1].article })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'postDiv' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            this.props.data[2].title
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            this.props.data[2].date,
-	            ' ',
-	            _react2.default.createElement('br', null)
-	          ),
-	          _react2.default.createElement(_Article2.default, { data: this.props.data[2].article })
-	        )
+	        this.props.data.map(function (c, i, a) {
+	          return _react2.default.createElement(
+	            'div',
+	            { key: i, className: 'postDiv' },
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              a[i].title
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              a[i].date,
+	              _react2.default.createElement('br', null)
+	            ),
+	            _react2.default.createElement(_Article2.default, { data: a[i].article })
+	          );
+	        })
 	      );
 	    }
 	  }]);
@@ -22746,7 +22713,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _sidebar = __webpack_require__(/*! ./sidebar.sass */ 183);
+	var _MonthList = __webpack_require__(/*! ./MonthList */ 183);
+	
+	var _MonthList2 = _interopRequireDefault(_MonthList);
+	
+	var _TagList = __webpack_require__(/*! ./TagList */ 184);
+	
+	var _TagList2 = _interopRequireDefault(_TagList);
+	
+	var _sidebar = __webpack_require__(/*! ./sidebar.sass */ 185);
 	
 	var _sidebar2 = _interopRequireDefault(_sidebar);
 	
@@ -22783,45 +22758,13 @@
 	          null,
 	          'Month'
 	        ),
+	        _react2.default.createElement(_MonthList2.default, { data: this.props.data }),
 	        _react2.default.createElement(
-	          'ul',
+	          'h3',
 	          null,
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'August'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'September'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'October'
-	          )
+	          'Tags'
 	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          'ul',
-	          null,
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'November'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'December'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'January'
-	          )
-	        ),
+	        _react2.default.createElement(_TagList2.default, { data: this.props.data }),
 	        _react2.default.createElement('hr', null)
 	      );
 	    }
@@ -22835,6 +22778,141 @@
 /***/ },
 /* 183 */
 /*!*****************************************!*\
+  !*** ./src/app/components/MonthList.js ***!
+  \*****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var MonthList = function (_React$Component) {
+	  _inherits(MonthList, _React$Component);
+	
+	  function MonthList() {
+	    _classCallCheck(this, MonthList);
+	
+	    return _possibleConstructorReturn(this, (MonthList.__proto__ || Object.getPrototypeOf(MonthList)).apply(this, arguments));
+	  }
+	
+	  _createClass(MonthList, [{
+	    key: "render",
+	    value: function render() {
+	      var monthArray = [];
+	      for (var i = 0; i < this.props.data.length; i++) {
+	        var dateSplit = this.props.data[i].date.split(" ");
+	        if (monthArray.includes(dateSplit[0]) == false) {
+	          monthArray.push(dateSplit[0]);
+	        }
+	      }
+	      return _react2.default.createElement(
+	        "ul",
+	        { className: "monthList" },
+	        monthArray.map(function (month, index) {
+	          return _react2.default.createElement(
+	            "li",
+	            { key: index },
+	            " ",
+	            month,
+	            " "
+	          );
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return MonthList;
+	}(_react2.default.Component);
+	
+	exports.default = MonthList;
+
+/***/ },
+/* 184 */
+/*!***************************************!*\
+  !*** ./src/app/components/TagList.js ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var TagList = function (_React$Component) {
+	  _inherits(TagList, _React$Component);
+	
+	  function TagList() {
+	    _classCallCheck(this, TagList);
+	
+	    return _possibleConstructorReturn(this, (TagList.__proto__ || Object.getPrototypeOf(TagList)).apply(this, arguments));
+	  }
+	
+	  _createClass(TagList, [{
+	    key: "render",
+	    value: function render() {
+	      var tagArray = [];
+	      for (var i = 0; i < this.props.data.length; i++) {
+	        for (var j = 0; j < this.props.data[i].tags.length; j++) {
+	          if (tagArray.includes(this.props.data[i].tags[j]) == false) {
+	            tagArray.push(this.props.data[i].tags[j]);
+	          }
+	        }
+	      }
+	      return _react2.default.createElement(
+	        "ul",
+	        { className: "tagList" },
+	        tagArray.map(function (tag, index) {
+	          return _react2.default.createElement(
+	            "li",
+	            { key: index },
+	            " ",
+	            tag,
+	            " "
+	          );
+	        })
+	      );
+	    }
+	  }]);
+	
+	  return TagList;
+	}(_react2.default.Component);
+	
+	exports.default = TagList;
+
+/***/ },
+/* 185 */
+/*!*****************************************!*\
   !*** ./src/app/components/sidebar.sass ***!
   \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
@@ -22842,7 +22920,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./sidebar.sass */ 184);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./sidebar.sass */ 186);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
@@ -22862,7 +22940,7 @@
 	}
 
 /***/ },
-/* 184 */
+/* 186 */
 /*!************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/sidebar.sass ***!
   \************************************************************************/
@@ -22879,7 +22957,7 @@
 
 
 /***/ },
-/* 185 */
+/* 187 */
 /*!**************************************!*\
   !*** ./src/app/components/main.sass ***!
   \**************************************/
@@ -22888,7 +22966,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./main.sass */ 186);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./main.sass */ 188);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
@@ -22908,7 +22986,7 @@
 	}
 
 /***/ },
-/* 186 */
+/* 188 */
 /*!*********************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/main.sass ***!
   \*********************************************************************/
@@ -22925,7 +23003,7 @@
 
 
 /***/ },
-/* 187 */
+/* 189 */
 /*!**************************************!*\
   !*** ./src/app/components/Footer.js ***!
   \**************************************/
@@ -22943,7 +23021,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _footer = __webpack_require__(/*! ./footer.sass */ 188);
+	var _footer = __webpack_require__(/*! ./footer.sass */ 190);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
@@ -22999,7 +23077,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 188 */
+/* 190 */
 /*!****************************************!*\
   !*** ./src/app/components/footer.sass ***!
   \****************************************/
@@ -23008,7 +23086,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./footer.sass */ 189);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./footer.sass */ 191);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
@@ -23028,7 +23106,7 @@
 	}
 
 /***/ },
-/* 189 */
+/* 191 */
 /*!***********************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/footer.sass ***!
   \***********************************************************************/
@@ -23045,7 +23123,7 @@
 
 
 /***/ },
-/* 190 */
+/* 192 */
 /*!*************************************!*\
   !*** ./src/app/components/app.sass ***!
   \*************************************/
@@ -23054,7 +23132,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 191);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 193);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
@@ -23074,7 +23152,7 @@
 	}
 
 /***/ },
-/* 191 */
+/* 193 */
 /*!********************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/app.sass ***!
   \********************************************************************/
@@ -23091,7 +23169,7 @@
 
 
 /***/ },
-/* 192 */
+/* 194 */
 /*!*******************************************!*\
   !*** ./src/app/components/blogposts.json ***!
   \*******************************************/
@@ -23117,6 +23195,12 @@
 		"date": "November 2, 2016 16:00",
 		"article": ["Cupcake ipsum dolor sit amet tiramisu icing cheesecake cake.", "Jujubes bonbon powder cupcake caramels apple pie chocolate bar.", "Muffin pastry dessert cookie chupa chups."],
 		"tags": ["tiramisu", "bonbon", "pastry"]
+	}, {
+		"id": "4",
+		"title": "Thoughts on Veggie Ipsum",
+		"date": "November 9, 2016 16:00",
+		"article": ["This cute ipsum generator injects names of vegetables in its output.", "Did I already say this is cute?.", "Because it is. Cute, that is."],
+		"tags": ["injects", "cute", "generator"]
 	}];
 
 /***/ }

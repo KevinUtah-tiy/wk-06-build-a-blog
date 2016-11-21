@@ -12,7 +12,7 @@ export default class Main extends React.Component {
     console.log("data:", this.props.data);
     return(
       <div className="mainDiv">
-        <h2>Main section</h2>
+        <h2>Main Section</h2>
 
         {this.props.data.map(function(c,i,a) {
           return(

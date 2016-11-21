@@ -3,6 +3,7 @@
 import React from 'react';
 
 import MonthList from './MonthList';
+import TagList from './TagList';
 
 import sidebar from './sidebar.sass';
 
@@ -13,17 +14,8 @@ export default class Sidebar extends React.Component {
           <h2>Sidebar</h2>
           <h3>Month</h3>
           <MonthList data={this.props.data}/>
-          <ul>
-            <li>August</li>
-            <li>September</li>
-            <li>October</li>
-          </ul>
-          <br />
-          <ul>
-            <li>November</li>
-            <li>December</li>
-            <li>January</li>
-          </ul>
+          <h3>Tags</h3>
+          <TagList data={this.props.data}/>
           <hr />
 
 
